@@ -1,0 +1,36 @@
+{
+    "Model": {
+        "modelName": "nvidia/megatron-bert-uncased-345m",
+        "sequenceLength": 512,
+        "paddingValue": "max_length",
+        "truncationFlag": true,
+        "returnTensors": "pt",
+        "specialTokenFlag": true
+    },
+    "Dataset": {
+        "datasetClass": "glue",
+        "datasetName": "sst2",
+        "labelCount": 2,
+        "shuffleFlag": false
+    },
+    "Logs": {
+        "checkpointDirectory": "Checkpoints",
+        "logsDirectory": "Logs",
+        "taskName": "PipelineParallel"
+    },
+    "Train": {
+        "batchSize": 20,
+        "startEpoch": 1,
+        "endEpoch": 3,
+        "learningRate": 5e-5,
+        "continueFlag": false,
+        "continueCheckpointPath": "",
+        "accelerateCheckpointDir": ""
+
+    },
+    "Eval": {
+        "batchSize": 20,
+        "checkpointPath": "",
+        "accelerateCheckpointDir": "Checkpoints/PipelineParallel"
+    }
+}
